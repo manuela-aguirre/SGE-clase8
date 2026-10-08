@@ -257,8 +257,8 @@
                         >
                     </div>
 
-                    <h1>Biblioteca COTECNOVA</h1>
-                    <p class="subtitle">ERP Universitario</p>
+                    <h1>COTECNOVA ERP</h1>
+                    <p class="subtitle">ERP de Ventas y Compras</p>
                     <p class="slogan">"Conocimiento al alcance de un clic"</p>
                 </div>
 
@@ -351,7 +351,7 @@
 
                     <!-- Pie -->
                     <div class="cotec-footer">
-                        <p>Biblioteca Universidad COTECNOVA</p>
+                        <p>COTECNOVA ERP</p>
                         <p class="highlight">Acceso exclusivo para usuarios autorizados</p>
                     </div>
 

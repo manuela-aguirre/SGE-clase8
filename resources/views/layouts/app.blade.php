@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Biblioteca COTECNOVA') }}</title>
+        <title>{{ config('app.name', 'COTECNOVA ERP') }}</title>
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet" />
@@ -228,13 +228,14 @@
                                 <i class="fa-solid" :class="openOperaciones ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
                             </button>
                         </div>
-                        <nav x-show="openOperaciones" x-transition class="cotec-nav-group">
-                            <a href="/dashboard" class="cotec-side-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-                            <a href="/libros" class="cotec-side-link {{ request()->routeIs('libros.*') ? 'active' : '' }}"><i class="fa-solid fa-book-open-reader"></i> Catálogo de Libros</a>
-                            <a href="/dashboard#" class="cotec-side-link"><i class="fa-solid fa-hand-holding-hand"></i> Préstamos</a>
-                            <a href="/usuarios" class="cotec-side-link {{ request()->routeIs('usuarios.*') ? 'active' : '' }}"><i class="fa-solid fa-user-group"></i> Usuarios</a>
-                            <a href="/dashboard#" class="cotec-side-link"><i class="fa-solid fa-file-lines"></i> Reservas</a>
-                        </nav>
+                       <nav x-show="openOperaciones" x-transition class="cotec-nav-group">
+    <a href="{{ route('dashboard') }}" class="cotec-side-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+    <a href="{{ route('products.index') }}" class="cotec-side-link {{ request()->routeIs('products.*') ? 'active' : '' }}"><i class="fa-solid fa-boxes-stacked"></i> Productos</a>
+    <a href="{{ route('proveedores.index') }}" class="cotec-side-link {{ request()->routeIs('proveedores.*') ? 'active' : '' }}"><i class="fa-solid fa-truck-field"></i> Proveedores</a>
+    <a href="{{ route('ventas.index') }}" class="cotec-side-link {{ request()->routeIs('ventas.*') ? 'active' : '' }}"><i class="fa-solid fa-cash-register"></i> Ventas</a>
+    <a href="{{ route('usuarios.index') }}" class="cotec-side-link {{ request()->routeIs('usuarios.*') ? 'active' : '' }}"><i class="fa-solid fa-user-group"></i> Usuarios</a>
+    <a href="{{ route('compras.index') }}" class="cotec-side-link {{ request()->routeIs('compras.*') ? 'active' : '' }}"><i class="fa-solid fa-cart-shopping"></i> Compras</a>
+</nav>
 
                         <div class="cotec-section-label">
                             <button type="button" @click="openConfiguracion = !openConfiguracion" class="cotec-section-toggle">
@@ -244,7 +245,9 @@
                         </div>
                         <nav x-show="openConfiguracion" x-transition class="cotec-nav-group">
                             <a href="#" class="cotec-side-link"><i class="fa-solid fa-gear"></i> Parámetros</a>
-                            <a href="#" class="cotec-side-link"><i class="fa-solid fa-tags"></i> Categorías</a>
+                            @can('ver-categorias')
+                                <a href="{{ route('categories.index') }}" class="cotec-side-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"><i class="fa-solid fa-tags"></i> Categorías</a>
+                            @endcan
                             <a href="{{ route('profile.edit') }}" class="cotec-side-link"><i class="fa-solid fa-user"></i> Perfil</a>
                         </nav>
 
@@ -256,7 +259,7 @@
                         </div>
                         <nav x-show="openReportes" x-transition class="cotec-nav-group">
                             <a href="#" class="cotec-side-link"><i class="fa-solid fa-chart-column"></i> Indicadores</a>
-                            <a href="#" class="cotec-side-link"><i class="fa-solid fa-triangle-exclamation"></i> Multas</a>
+                            <a href="#" class="cotec-side-link"><i class="fa-solid fa-file-invoice-dollar"></i> Cartera</a>
                         </nav>
                     </aside>
 
@@ -285,7 +288,7 @@
 
                     <div>
                         <div style="font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;opacity:0.7;margin-bottom:0.5rem;">Contacto</div>
-                        <div>biblioteca@cotecnova.edu.co</div>
+                        <div>ventas@cotecnova.edu.co</div>
                     </div>
 
                     <div>

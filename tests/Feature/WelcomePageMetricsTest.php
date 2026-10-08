@@ -8,7 +8,7 @@ class WelcomePageMetricsTest extends TestCase
 {
     public function test_welcome_page_uses_data_driven_metrics(): void
     {
-        $path = storage_path('app/data/libro.csv');
+        $path = storage_path('app/data/producto.csv');
         $fileCount = 0;
         $stockHealthy = 0;
 

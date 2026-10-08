@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ config('app.name', 'Biblioteca COTECNOVA') }}</title>
+        <title>{{ config('app.name', 'COTECNOVA ERP') }}</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -508,8 +508,8 @@
                             >
                         </div>
                         <div>
-                            <div class="cotec-brand-text">Biblioteca COTECNOVA</div>
-                            <div class="cotec-brand-sub">ERP universitario</div>
+                            <div class="cotec-brand-text">COTECNOVA ERP</div>
+                            <div class="cotec-brand-sub">ERP de ventas y compras</div>
                         </div>
                     </div>
 
@@ -526,10 +526,10 @@
 
                 <section class="cotec-hero">
                     <div>
-                        <div class="cotec-kicker">Sistema académico y bibliotecario</div>
-                        <h1 class="cotec-title">Tu biblioteca universitaria, organizada y conectada.</h1>
+                        <div class="cotec-kicker">Sistema de ventas y compras</div>
+                        <h1 class="cotec-title">Tus ventas y compras, organizadas y conectadas.</h1>
                         <p class="cotec-subtitle">
-                            Gestiona préstamos, reservas, usuarios, inventario y reportes con una plataforma clara, segura y pensada para la comunidad COTECNOVA.
+                            Gestiona ventas, compras, clientes, inventario y reportes con una plataforma clara, segura y pensada para la comunidad COTECNOVA.
                         </p>
 
                         <div class="cotec-cta-row">
@@ -554,27 +554,27 @@
                             <div class="cotec-panel-header">
                                 <div>
                                     <div class="cotec-panel-kicker">Panel general</div>
-                                    <div class="cotec-panel-title">Biblioteca Central</div>
+                                    <div class="cotec-panel-title">Resumen general</div>
                                 </div>
                                 <span class="cotec-live">En línea</span>
                             </div>
 
                             <div class="cotec-grid">
                                 <div class="cotec-metric">
-                                    <span>Libros</span>
-                                    <strong>{{ $panelStats['libros'] ?? '0' }}</strong>
+                                    <span>Productos</span>
+                                    <strong>{{ $panelStats['productos'] ?? '0' }}</strong>
                                 </div>
                                 <div class="cotec-metric">
                                     <span>Usuarios</span>
                                     <strong>{{ $panelStats['usuarios'] ?? '0' }}</strong>
                                 </div>
                                 <div class="cotec-metric">
-                                    <span>Préstamos</span>
-                                    <strong>{{ $panelStats['prestamos'] ?? '0' }}</strong>
+                                    <span>Ventas</span>
+                                    <strong>{{ $panelStats['ventas'] ?? '0' }}</strong>
                                 </div>
                                 <div class="cotec-metric">
-                                    <span>Multas</span>
-                                    <strong>{{ $panelStats['multas'] ?? '0%' }}</strong>
+                                    <span>Mora</span>
+                                    <strong>{{ $panelStats['mora'] ?? '0%' }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -587,32 +587,32 @@
             <div class="cotec-section-inner">
                 <div class="cotec-section-heading">
                     <div class="cotec-section-label">Módulos principales</div>
-                    <h2 class="cotec-section-title">Todo lo que necesita una biblioteca universitaria</h2>
+                    <h2 class="cotec-section-title">Todo lo que necesita tu operación comercial</h2>
                 </div>
 
                 <div class="cotec-features">
                     <div class="cotec-feature">
                         <div class="cotec-feature-icon" style="background:#ecfdf5;">📚</div>
-                        <h3>Catálogo</h3>
-                        <p>Control del inventario, autores, categorías, disponibilidad y digitalización del acervo.</p>
+                        <h3>Productos</h3>
+                        <p>Control del inventario, proveedores, categorías y disponibilidad de productos.</p>
                     </div>
 
                     <div class="cotec-feature">
                         <div class="cotec-feature-icon" style="background:#eff6ff;">🧾</div>
-                        <h3>Préstamos</h3>
-                        <p>Registro de préstamos, devoluciones, reservas, vencimientos y alertas automáticas.</p>
+                        <h3>Ventas</h3>
+                        <p>Registro de ventas, cobros, pedidos, vencimientos y alertas automáticas.</p>
                     </div>
 
                     <div class="cotec-feature">
                         <div class="cotec-feature-icon" style="background:#f0fdf4;">👥</div>
                         <h3>Usuarios</h3>
-                        <p>Administración de estudiantes, docentes, administradores y permisos según roles.</p>
+                        <p>Administración de usuarios, vendedores, almacenistas y permisos según roles.</p>
                     </div>
 
                     <div class="cotec-feature">
                         <div class="cotec-feature-icon" style="background:#fef3c7;">📊</div>
                         <h3>Reportes</h3>
-                        <p>Indicadores de circulación, uso, cumplimiento y rendimiento del servicio bibliotecario.</p>
+                        <p>Indicadores de ventas, compras, rotación y rendimiento del negocio.</p>
                     </div>
                 </div>
             </div>
@@ -621,24 +621,24 @@
         <section class="cotec-testimonials">
             <div class="cotec-section-heading">
                 <div class="cotec-section-label" style="color:#a7f3d0;">Experiencia institucional</div>
-                <h2 class="cotec-section-title" style="color:white;">Bibliotecas que mejoran su servicio académico</h2>
+                <h2 class="cotec-section-title" style="color:white;">Empresas que mejoran su operación comercial</h2>
             </div>
 
             <div class="cotec-testimonial-grid">
                 <article class="cotec-testimonial">
-                    <p>“Redujimos tiempos de atención y conseguimos una gestión más clara del inventario y de los préstamos del campus.”</p>
+                    <p>“Redujimos tiempos de atención y conseguimos una gestión más clara del inventario y de las ventas y compras.”</p>
                     <strong>Ana Gómez</strong>
-                    <span>Directora de Biblioteca</span>
+                    <span>Gerente comercial</span>
                 </article>
 
                 <article class="cotec-testimonial">
-                    <p>“La plataforma nos ayudó a organizar mejor la información de usuarios, reservas y notificaciones de vencimiento.”</p>
+                    <p>“La plataforma nos ayudó a organizar mejor la información de clientes, pedidos y notificaciones de vencimiento.”</p>
                     <strong>Carlos Mendoza</strong>
-                    <span>Coordinador Académico</span>
+                    <span>Coordinador Comercial</span>
                 </article>
 
                 <article class="cotec-testimonial">
-                    <p>“Es una solución práctica, moderna y muy útil para dar un servicio más eficiente a la comunidad estudiantil.”</p>
+                    <p>“Es una solución práctica, moderna y muy útil para dar un servicio más eficiente a nuestros clientes.”</p>
                     <strong>María Torres</strong>
                     <span>Encargada de Colecciones</span>
                 </article>
@@ -650,7 +650,7 @@
                 <div class="cotec-callout-inner">
                     <div>
                         <div class="cotec-section-label" style="color:#dcfce7;">Empieza hoy</div>
-                        <h2 style="color:white;">Optimiza la operación de tu biblioteca universitaria.</h2>
+                        <h2 style="color:white;">Optimiza la operación de tus ventas y compras.</h2>
                     </div>
 
                     <div class="cotec-actions">
@@ -677,9 +677,9 @@
                         @else
                             <div class="cotec-footer-brand-mark">B</div>
                         @endif
-                        <div>Biblioteca COTECNOVA</div>
+                        <div>COTECNOVA ERP</div>
                     </div>
-                    <p>Sistema académico para la gestión eficiente del acervo, usuarios y servicios bibliotecarios.</p>
+                    <p>Sistema para la gestión eficiente de ventas, compras e inventario.</p>
                 </div>
 
                 <div>
@@ -694,9 +694,9 @@
                 <div>
                     <h3>Contacto</h3>
                     <ul>
-                        <li>biblioteca@cotecnova.edu.co</li>
+                        <li>ventas@cotecnova.edu.co</li>
                         <li>+57 300 123 4567</li>
-                        <li>Campus principal</li>
+                        <li>Sede principal</li>
                     </ul>
                 </div>
             </div>

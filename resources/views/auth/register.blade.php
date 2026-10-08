@@ -250,8 +250,8 @@
                         >
                     </div>
 
-                    <h1>Biblioteca COTECNOVA</h1>
-                    <p class="subtitle">ERP Universitario</p>
+                    <h1>COTECNOVA ERP</h1>
+                    <p class="subtitle">ERP de Ventas y Compras</p>
                     <p class="slogan">"Conocimiento al alcance de un clic"</p>
                 </div>
 
@@ -259,13 +259,13 @@
                 <div class="cotec-body">
 
                     <h2>Crear cuenta - COTECNOVA ERP</h2>
-                    <p class="welcome">Regístrate para acceder al sistema de la biblioteca.</p>
+                    <p class="welcome">Regístrate para acceder al sistema ERP.</p>
 
                     <div class="cotec-benefits">
                         <p>Al registrarte podrás:</p>
                         <ul>
-                            <li>Consultar y reservar libros disponibles</li>
-                            <li>Ver tu historial de préstamos</li>
+                            <li>Consultar productos y su disponibilidad</li>
+                            <li>Ver tu historial de ventas y compras</li>
                             <li>Recibir notificaciones de vencimiento</li>
                         </ul>
                     </div>
@@ -426,7 +426,7 @@
 
                     <!-- Pie -->
                     <div class="cotec-footer">
-                        <p>Biblioteca Universidad COTECNOVA</p>
+                        <p>COTECNOVA ERP</p>
                     </div>
 
                 </div>

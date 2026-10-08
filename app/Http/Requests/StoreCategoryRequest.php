@@ -1,29 +1,35 @@
 <?php
-
 namespace App\Http\Requests;
-
-use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Validation\Rule;
 class StoreCategoryRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return false;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
-    {
-        return [
-            //
-        ];
-    }
+ // Los permisos se validan en el controlador (middleware de Spatie)
+ public function authorize(): bool
+ {
+ return true;
+ }
+ protected function prepareForValidation(): void
+ {
+ $this->merge(['active' => $this->boolean('active')]);
+ }
+ public function rules(): array
+ {
+ return [
+ 'name' => [
+ 'required', 'string', 'max:100',
+ // Nombre único entre las categorías que no están en la papelera
+ Rule::unique('categories', 'name')->withoutTrashed()->ignore($this->route('category')),
+ ],
+ 'description' => ['nullable', 'string'],
+ 'active' => ['boolean'],
+ ];
+ }
+ public function attributes(): array
+ {
+ return [
+ 'name' => 'nombre',
+ 'description' => 'descripción',
+ ];
+ }
 }

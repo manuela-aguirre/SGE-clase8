@@ -12,7 +12,19 @@
             </a>
 
             <div class="hidden items-center gap-6 text-sm font-medium sm:flex">
-                <span class="text-slate-500">Sistema</span>
+                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    Dashboard
+                </x-nav-link>
+                @can('ver-productos')
+                    <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.*')">
+                        Productos
+                    </x-nav-link>
+                @endcan
+                @can('ver-categorias')
+                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.*')">
+                        Categorías
+                    </x-nav-link>
+                @endcan
             </div>
         </div>
 
