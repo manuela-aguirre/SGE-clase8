@@ -4,6 +4,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Proveedor;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
@@ -46,8 +47,9 @@ $query->where('nombre', 'like', '%'.$request->string('search').'%')
  public function create()
  {
  return view('products.create', [
- 'product' => new Product(['active' => true, 'stock' => 0]),
+ 'product' => new Product(['stock' => 0]),
  'categories' => $this->selectableCategories(),
+ 'proveedores' => Proveedor::orderBy('nombre')->get(),
  ]);
  }
  public function store(StoreProductRequest $request)
@@ -61,6 +63,7 @@ $query->where('nombre', 'like', '%'.$request->string('search').'%')
  return view('products.edit', [
  'product' => $product,
  'categories' => $this->selectableCategories(),
+ 'proveedores' => Proveedor::orderBy('nombre')->get(),
  ]);
  }
  public function update(UpdateProductRequest $request, Product $product)

@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 class StoreCategoryRequest extends FormRequest
 {
  // Los permisos se validan en el controlador (middleware de Spatie)
@@ -9,27 +8,18 @@ class StoreCategoryRequest extends FormRequest
  {
  return true;
  }
- protected function prepareForValidation(): void
- {
- $this->merge(['active' => $this->boolean('active')]);
- }
  public function rules(): array
  {
  return [
- 'name' => [
- 'required', 'string', 'max:100',
- // Nombre único entre las categorías que no están en la papelera
- Rule::unique('categories', 'name')->withoutTrashed()->ignore($this->route('category')),
- ],
- 'description' => ['nullable', 'string'],
- 'active' => ['boolean'],
+ 'codigo' => ['nullable', 'string', 'max:20'],
+ 'nombre' => ['required', 'string', 'max:50'],
  ];
  }
  public function attributes(): array
  {
  return [
- 'name' => 'nombre',
- 'description' => 'descripción',
+ 'codigo' => 'código',
+ 'nombre' => 'nombre',
  ];
  }
 }

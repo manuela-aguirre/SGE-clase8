@@ -6,7 +6,7 @@
  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
  <form method="POST" action="{{ route('products.store') }}" class="bg-white shadow rounded p-6 space-y4">
  @csrf
- @include('products.partials.form')
+ @include('products._form')
  <div class="flex items-center gap-4">
  <x-primary-button>Guardar</x-primary-button>
  <a href="{{ route('products.index') }}" class="underline">Cancelar</a>

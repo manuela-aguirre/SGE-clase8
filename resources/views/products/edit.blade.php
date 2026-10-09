@@ -8,7 +8,7 @@
 space-y-4">
  @csrf
  @method('PUT')
- @include('products.partials.form')
+ @include('products._form')
  <div class="flex items-center gap-4">
  <x-primary-button>Guardar cambios</x-primary-button>
  <a href="{{ route('products.index') }}" class="underline">Cancelar</a>

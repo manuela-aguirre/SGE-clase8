@@ -24,10 +24,8 @@ class CategoryController extends Controller implements HasMiddleware
  $categories = Category::query()
  ->withCount('products')
  ->when($showTrashed, fn ($query) => $query->onlyTrashed())
- ->when($request->filled('search'), fn ($query) => $query->where('name', 'like', '%'.$request->string('search').'%'))
- ->when($request->filled('status'), fn ($query) => $query->where('active', $request->input('status') ===
-'active'))
- ->orderBy('name')
+ ->when($request->filled('search'), fn ($query) => $query->where('nombre', 'like', '%'.$request->string('search').'%'))
+ ->orderBy('nombre')
  ->paginate(10)
  ->withQueryString();
  return view('categories.index', [
@@ -39,7 +37,7 @@ class CategoryController extends Controller implements HasMiddleware
  public function create()
  {
  return view('categories.create', [
- 'category' => new Category(['active' => true]),
+ 'category' => new Category,
  ]);
  }
  public function store(StoreCategoryRequest $request)
@@ -64,16 +62,16 @@ class CategoryController extends Controller implements HasMiddleware
  {
  // No se permite eliminar una categoría que todavía tiene productos
  if ($category->products()->exists()) {
- return back()->with('error', "No se puede eliminar «{$category->name}»: tiene productos asociados.");
+ return back()->with('error', "No se puede eliminar «{$category->nombre}»: tiene productos asociados.");
  }
  $category->delete();
  return redirect()->route('categories.index')
- ->with('success', "Categoría «{$category->name}» enviada a la papelera.");
+ ->with('success', "Categoría «{$category->nombre}» enviada a la papelera.");
  }
  public function restore(Category $category)
  {
  $category->restore();
  return redirect()->route('categories.index', ['trashed' => 1])
- ->with('success', "Categoría «{$category->name}» restaurada.");
+ ->with('success', "Categoría «{$category->nombre}» restaurada.");
  }
 }

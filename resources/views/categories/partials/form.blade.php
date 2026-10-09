@@ -1,19 +1,10 @@
 <div>
- <x-input-label for="name" value="Nombre" />
- <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $category-
->name)" required />
- <x-input-error class="mt-2" :messages="$errors->get('name')" />
+	<x-input-label for="codigo" value="Código (opcional)" />
+	<x-text-input id="codigo" name="codigo" type="text" class="mt-1 block w-full" :value="old('codigo', $category->codigo)" maxlength="20" />
+	<x-input-error class="mt-2" :messages="$errors->get('codigo')" />
 </div>
-<div>
- <x-input-label for="description" value="Descripción (opcional)" />
- <textarea id="description" name="description" rows="3" class="mt-1 block w-full border-gray-300 rounded-md
-shadow-sm">{{ old('description', $category->description) }}</textarea>
- <x-input-error class="mt-2" :messages="$errors->get('description')" />
-</div>
-<div>
- <label class="inline-flex items-center gap-2">
- <input type="checkbox" name="active" value="1" class="rounded border-gray-300" @checked(old('active',
-$category->active))>
- <span>Categoría activa</span>
- </label>
+<div class="mt-4">
+	<x-input-label for="nombre" value="Nombre" />
+	<x-text-input id="nombre" name="nombre" type="text" class="mt-1 block w-full" :value="old('nombre', $category->nombre)" required maxlength="50" />
+	<x-input-error class="mt-2" :messages="$errors->get('nombre')" />
 </div>

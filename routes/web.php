@@ -7,9 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\VentaController;
 use Illuminate\Support\Facades\Route;
-Route::get('/', function () {
- return redirect('/login');
-});
+Route::view('/', 'welcome')->name('welcome');
 Route::get('/dashboard', DashboardController::class)
  ->middleware(['auth', 'verified'])
  ->name('dashboard');
